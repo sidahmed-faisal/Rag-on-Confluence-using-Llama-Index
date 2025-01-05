@@ -23,7 +23,7 @@
 
 ##  Overview
 
-The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval and question answering by integrating language models and chroma vector store. Its key features include efficient document processing, accurate response evaluation with **RelevancyEvaluator** from llama-index, and seamless Confluence interaction. Targeting users seeking streamlined AI-powered information retrieval, it enhances data reliability and user experience.
+The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval and question answering by integrating language models and chroma vector store. Its key features include efficient document processing, accurate response evaluation with **RelevancyEvaluator** from llama-index to check for **hallucinations**, and seamless Confluence interaction. Targeting users seeking streamlined AI-powered information retrieval, it enhances data reliability and user experience.
 
 ---
 
