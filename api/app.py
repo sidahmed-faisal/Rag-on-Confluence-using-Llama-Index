@@ -55,15 +55,19 @@ def get_spaces():
     
     except Exception as e:
 
-        return JSONResponse(f"Error while trying to get spaces {e}", status_code=403)
+        return JSONResponse(f"Error while trying to get spaces  details: {e}", status_code=403)
 
 
 @app.post("/get-pages")
 def get_pages(space):
 
-    pages = conful.load_pages(space)
+    try:
+        pages = conful.load_pages(space)
 
-    return JSONResponse(pages)
+        return JSONResponse(pages)
+    
+    except Exception as e:
+        return JSONResponse(f"Error while trying to get pages from space {space} details: {e}", status_code=404)
 
 @app.post("/chat")
 def chat(request: QueryInput):
@@ -97,7 +101,7 @@ def chat(request: QueryInput):
             return response
         
         except Exception as e:
-            return JSONResponse("one or more of the pages you requested aren't found ",status_code=404)
+            return JSONResponse(f"one or more of the pages you requested aren't found  details: {e}",status_code=404)
 
 
 
