@@ -162,8 +162,7 @@ http://127.0.0.1:8000/docs#/
 ❯ cd ./app
 ```
 
-3. Navigate to the ./app directory:
+3. Run the frontend app:
 ```sh
 ❯ streamlit run streamlit_app.py
 
----
