@@ -160,6 +160,7 @@ http://127.0.0.1:8000/docs#/
 2. Navigate to the ./app directory:
 ```sh
 ❯ cd ./app
+```
 
 3. Navigate to the ./app directory:
 ```sh
