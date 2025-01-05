@@ -109,6 +109,7 @@ Before getting started with Rag-on-Confluence-using-Llama-Index, ensure your run
 Install Rag-on-Confluence-using-Llama-Index using one of the following methods:
 
 **Build from source:**
+**Backend**
 
 1. Clone the Rag-on-Confluence-using-Llama-Index repository:
 ```sh
@@ -126,9 +127,20 @@ Install Rag-on-Confluence-using-Llama-Index using one of the following methods:
 ❯ pip install requirements.txt
 ```
 
+4. Navigate to the **/api** directory and run:
 
-###  Usage
-Run Rag-on-Confluence-using-Llama-Index using the following command:
-echo 'INSERT-RUN-COMMAND-HERE'
+```sh
+❯ fastapi run app.py
+```
+
+5- Access the backend swagger from:
+
+```sh
+http://127.0.0.1:8000/docs#/
+```
+
+
+###  Frontend
+
 
 ---
