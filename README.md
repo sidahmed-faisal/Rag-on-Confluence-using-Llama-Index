@@ -170,4 +170,4 @@ http://127.0.0.1:8000/docs#/
 ### Demo
 below is a video demonstration of the project in action. Click to watch how it works:
 
-![Demo Video](record.mp4)
+![Demo Video](./record.mp4)
