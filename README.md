@@ -165,4 +165,9 @@ http://127.0.0.1:8000/docs#/
 3. Run the frontend app:
 ```sh
 ❯ streamlit run streamlit_app.py
+```
 
+### Demo
+below is a video demonstration of the project in action. Click to watch how it works:
+
+[![Demo Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](record_test.mp4)
