@@ -9,6 +9,8 @@ from llama_index.core import VectorStoreIndex,SummaryIndex
 from llama_index.core.tools import FunctionTool, QueryEngineTool
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.core import StorageContext
+
+from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 
 from llama_index.core.node_parser import SentenceSplitter
@@ -31,6 +33,17 @@ splitter = SentenceSplitter(chunk_size=1024,chunk_overlap=100)
 
 load_dotenv()
 
+
+def evaluate_response(question ,response):
+
+    evaluation_model = OpenAI(temperature=0, model= "gpt-3.5-turbo")
+
+    evaluator = RelevancyEvaluator(llm=evaluation_model)
+
+    eval_result = evaluator.evaluate_response(query= question , response=response)
+
+    return eval_result
+
 def answer_question(question, documents):
 
 
@@ -47,15 +60,33 @@ def answer_question(question, documents):
 
     queryengine = index.as_query_engine(similarity_top_k=3)
 
-    response = queryengine.query(question)
+    try:
 
-    # Cleanup: delete the Chroma collection after execution
-    chroma_client.delete_collection("documents")
+        response = queryengine.query(question)
 
-    return str(response)
+        evaluation = evaluate_response(question=question , response=response)
 
-def evaluate_response():
-    pass
+        result = "No Hallucination" if evaluation.passing == True else "Hallucinated"
+        
+        # Cleanup: delete the Chroma collection after execution
+        chroma_client.delete_collection("documents")
+
+
+        return {
+            "answer" : response,
+            "relevancy": result
+        }
+
+
+    except Exception as e:
+        return e
+
+
+
+
+
+
+
 
 
 
