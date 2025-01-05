@@ -137,13 +137,13 @@ URL=""
 OPENAI_API_KEY=""
 ```
 
-4. Navigate to the **/api** directory and run:
+5. Navigate to the **/api** directory and run:
 
 ```sh
 ❯ fastapi run app.py
 ```
 
-5- Access the backend swagger from:
+6- Access the backend swagger from:
 
 ```sh
 http://127.0.0.1:8000/docs#/
@@ -156,7 +156,7 @@ http://127.0.0.1:8000/docs#/
 ❯ cd Rag-on-Confluence-using-Llama-Index
 ```
 
-2. Navigate to the ./app directory:
+2. Navigate to the **./app** directory:
 ```sh
 ❯ cd ./app
 ```
