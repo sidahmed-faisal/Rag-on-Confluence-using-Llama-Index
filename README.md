@@ -91,7 +91,7 @@ The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval a
 			</tr>
 			<tr>
 				<td><b><a href='https://github.com/sidahmed-faisal/Rag-on-Confluence-using-Llama-Index/blob/master/api/confluence_utils.py'>confluence_utils.py</a></b></td>
-				<td>- Enables interaction with Confluence API to retrieve documents, pages, and spaces with Confluence Reader from llama-hub <https://llamahub.ai/l/readers/llama-index-readers-confluence><br>- Handles authentication and data retrieval, abstracting away complexities<br>- Facilitates seamless integration with ConfluenceReader for efficient data loading and space management.</td>
+				<td>- Enables interaction with Confluence API to retrieve documents, pages, and spaces with Confluence Reader from llama-hub <herf="https://llamahub.ai/l/readers/llama-index-readers-confluence"><br>- Handles authentication and data retrieval, abstracting away complexities<br>- Facilitates seamless integration with ConfluenceReader for efficient data loading and space management.</td>
 			</tr>
 			</table>
 		</blockquote>
