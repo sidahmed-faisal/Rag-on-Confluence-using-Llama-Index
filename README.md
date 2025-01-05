@@ -152,6 +152,17 @@ http://127.0.0.1:8000/docs#/
 
 
 ###  Frontend
+1. Navigate to the project directory:
+```sh
+❯ cd Rag-on-Confluence-using-Llama-Index
+```
 
+2. Navigate to the ./app directory:
+```sh
+❯ cd ./app
+
+3. Navigate to the ./app directory:
+```sh
+❯ streamlit run streamlit_app.py
 
 ---
