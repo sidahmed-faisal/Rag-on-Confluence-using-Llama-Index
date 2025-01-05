@@ -50,6 +50,11 @@ The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval a
     │   ├── confluence_utils.py
     │   ├── llama_utils.py
     │   └── pydantic_models.py
+    ├── app
+    │   ├── api_utils.py
+    │   ├── chat_interface.py
+    │   ├── sidebar.py
+    │   └── streamlit_app.py
     └── requierments.txt
 ```
 
