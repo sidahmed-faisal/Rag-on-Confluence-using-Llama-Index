@@ -112,8 +112,7 @@ Before getting started with Rag-on-Confluence-using-Llama-Index, ensure your run
 
 Install Rag-on-Confluence-using-Llama-Index using one of the following methods:
 
-**Build from source:**
-**Backend**
+### Backend
 
 1. Clone the Rag-on-Confluence-using-Llama-Index repository:
 ```sh
