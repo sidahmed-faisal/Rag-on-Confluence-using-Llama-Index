@@ -78,16 +78,3 @@ class Confluence_control:
         spaces_dict = {space['name']: space['key'] for space in data['results']}
 
         return spaces_dict        
-
-        
-
-
-        
-
-# from llama_index.core.node_parser import SentenceSplitter
-
-# parser = SentenceSplitter()
-
-# nodes = parser.get_nodes_from_documents(documents)
-
-# print(nodes)
