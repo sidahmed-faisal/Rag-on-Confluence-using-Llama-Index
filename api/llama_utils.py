@@ -20,6 +20,7 @@ from llama_index.core import Settings
 from llama_index.core.node_parser import SentenceSplitter
 
 import chromadb
+import logging
 
 
 embed_model = FastEmbedEmbedding(model_name="BAAI/bge-small-en-v1.5")
@@ -33,10 +34,17 @@ splitter = SentenceSplitter(chunk_size=1024,chunk_overlap=100)
 
 load_dotenv()
 
+# Configure logging on log.txt
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler("log.txt"),
+                        logging.StreamHandler()
+                    ])
 
-def evaluate_response(question ,response):
+def evaluate(question ,response):
 
-    evaluation_model = OpenAI(temperature=0, model= "gpt-3.5-turbo")
+    evaluation_model = OpenAI(temperature=0,)
 
     evaluator = RelevancyEvaluator(llm=evaluation_model)
 
@@ -49,45 +57,45 @@ def answer_question(question, documents):
 
     nodes = splitter.get_nodes_from_documents(documents)
 
+    logging.info("Creating Chroma collection")
+
     chroma_client = chromadb.PersistentClient()
     chroma_collection = chroma_client.create_collection("documents")
 
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
 
+    logging.info("Success!: Created Chroma collection")
+
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
     index = VectorStoreIndex(nodes, storage_context=storage_context)
+
 
     queryengine = index.as_query_engine(similarity_top_k=3)
 
     try:
 
+        logging.info(f"Generating Answer for question {question}")
+
         response = queryengine.query(question)
 
-        evaluation = evaluate_response(question=question , response=response)
+        logging.info(f"Success answer generated!")
 
-        result = "No Hallucination" if evaluation.passing == True else "Hallucinated"
+        logging.info(f"Evaluating Answer: {response}")
+
+        evaluation = evaluate(question=question , response=response)
+
+        # result = "No Hallucination" if evaluation.passing == True else "Hallucinated"
         
         # Cleanup: delete the Chroma collection after execution
         chroma_client.delete_collection("documents")
 
 
         return {
-            "answer" : response,
-            "relevancy": result
+            "answer" : response.response,
+            "relevancy":  "Hallucinated"  if evaluation.passing == False else "No Hallucination"
         }
 
 
     except Exception as e:
         return e
-
-
-
-
-
-
-
-
-
-
-

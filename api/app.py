@@ -75,7 +75,7 @@ def chat(request: QueryInput):
 
             response = answer_question(request.question, documents)
             
-            return JSONResponse(response)
+            return response
         
         except Exception as e:
             return JSONResponse(f"the Space you requested with id: {request.space} is not present",status_code=404)
@@ -88,7 +88,7 @@ def chat(request: QueryInput):
         try:
             documents = reader.load_data(
                 page_ids=request.page_id, include_attachments=True,)
-            documents = conful.load_documents(request.space)
+            
 
             response = answer_question(request.question, documents)
 
