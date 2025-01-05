@@ -23,7 +23,7 @@
 
 ##  Overview
 
-The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval and question answering by integrating language models and chroma vector store. Its key features include efficient document processing, accurate response evaluation with **RelevancyEvaluator** from llama-index, and seamless Confluence interaction. Targeting users seeking streamlined AI-powered information retrieval, it enhances data reliability and user experience.
+The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval and question answering by integrating language models and chroma vector store. Its key features include efficient document processing, accurate response evaluation with **RelevancyEvaluator** from llama-index to check for **hallucinations**, and seamless Confluence interaction. Targeting users seeking streamlined AI-powered information retrieval, it enhances data reliability and user experience.
 
 ---
 
@@ -37,7 +37,7 @@ The Rag-on-Confluence-using-Llama-Index project streamlines document retrieval a
 | 🔌 | **Integrations**  | <ul><li>Integrates with **external services** for embeddings and evaluation in `api/llama_utils.py`.</li><li>Enables interaction with **Confluence API** for seamless data retrieval.</li><li>Facilitates integration of various language models and indexing services within the project architecture.</li></ul> |
 | 🧩 | **Modularity**    | <ul><li>Divides functionalities into separate modules like `api/llama_utils.py`, `api/pydantic_models.py`, and `api/confluence_utils.py` for better organization.</li><li>Encapsulates related functionalities within individual files for maintainability.</li><li>Follows a modular design pattern for scalability and ease of maintenance.</li></ul> |
 | ⚡️  | **Performance**   | <ul><li>Optimizes document processing and response evaluation for **efficiency**.</li><li>Utilizes **vector indexing** and AI models for accurate responses to user queries.</li><li>Ensures **fast response times** for user interactions with Confluence.</li></ul> |
-| 🛡️ | **Security**      | <ul><li>Handles **authentication** securely in `api/confluence_utils.py` for Confluence API interactions.</li><li>Implements **data encryption** for sensitive information handling.</li><li>Follows **security best practices** to prevent vulnerabilities.</li></ul> |
+| 🛡️ | **Security**      | <ul><li>Handles **authentication** securely in `api/confluence_utils.py` for Confluence API interactions.</li><li>Implements **environment variables** for sensitive information handling.</li><li>Follows **security best practices** to prevent vulnerabilities.</li></ul> |
 
 ---
 
