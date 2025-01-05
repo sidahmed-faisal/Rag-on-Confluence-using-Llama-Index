@@ -23,16 +23,18 @@ import chromadb
 import logging
 
 
-embed_model = FastEmbedEmbedding(model_name="BAAI/bge-small-en-v1.5")
+# embed_model = FastEmbedEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
-Settings.embed_model = embed_model
+# Settings.embed_model = embed_model
 
-# Settings.embed_model= OpenAIEmbedding()
+load_dotenv()
+
+
+Settings.embed_model= OpenAIEmbedding()
 
 splitter = SentenceSplitter(chunk_size=1024,chunk_overlap=100)
 
 
-load_dotenv()
 
 # Configure logging on log.txt
 logging.basicConfig(level=logging.INFO,
