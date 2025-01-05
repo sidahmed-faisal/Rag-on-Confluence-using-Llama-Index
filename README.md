@@ -128,7 +128,7 @@ Install Rag-on-Confluence-using-Llama-Index using one of the following methods:
 3. Install the project dependencies:
 
 ```sh
-❯ pip install requirements.txt
+❯ pip install -r requirements.txt
 ```
 4. Add to **.env** file the following: **CONFLUENCE_USERNAME** (your email), **CONFLUENCE_PASSWORD** (API token you can obtain from : **<https://id.atlassian.com/manage-profile/security/api-tokens>**), **URL** for your confluence domain and **OPENAI_API_KEY** from OpenAI
 ```sh
@@ -170,4 +170,4 @@ http://127.0.0.1:8000/docs#/
 ### Demo
 below is a video demonstration of the project in action. Click to watch how it works:
 
-[![Demo Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](record_test.mp4)
+[![Demo Video]](record.mp4)
