@@ -45,7 +45,7 @@ app = FastAPI(lifespan=lifespan)
 
 
 @app.get("/get-spaces")
-def get_spaces():
+async def get_spaces():
 
     try:
 
@@ -59,7 +59,7 @@ def get_spaces():
 
 
 @app.post("/get-pages")
-def get_pages(space):
+async def get_pages(space):
 
     try:
         pages = conful.load_pages(space)
@@ -70,7 +70,7 @@ def get_pages(space):
         return JSONResponse(f"Error while trying to get pages from space {space} details: {e}", status_code=404)
 
 @app.post("/chat")
-def chat(request: QueryInput):
+async def chat(request: QueryInput):
 
     if request.page_id == None:
 
