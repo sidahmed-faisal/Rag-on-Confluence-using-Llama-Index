@@ -96,9 +96,8 @@ def chat(request: QueryInput):
 
             response = answer_question(request.question, documents)
 
-            JSONResponse(response)
+            return JSONResponse(response)
             
-            return response
         
         except Exception as e:
             return JSONResponse(f"one or more of the pages you requested aren't found  details: {e}",status_code=404)
